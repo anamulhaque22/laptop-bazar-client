@@ -6,7 +6,7 @@
 
 @layer components {
   .btn {
-    @apply text-sm font-fira text-white rounded-md cursor-pointer bg-white font-medium mx-2.5 flex py-2.5 md:px-4 xl:px-5 items-center bg-[#1E293B] transition-all duration-1000 ease-in-out hover:text-white hover:bg-gradient-to-r from-primary to-secondary;
+    @apply text-sm font-fira text-white rounded-md cursor-pointer bg-white font-medium mx-2.5 flex py-2.5 md:px-4 xl:px-5 items-center transition-all duration-1000 ease-in-out hover:text-white hover:bg-gradient-to-r from-primary to-secondary;
   }
   .active {
     @apply bg-gradient-to-r from-primary to-secondary;

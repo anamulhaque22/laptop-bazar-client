@@ -1,10 +1,16 @@
-const Product = ({ prodcut }) => {
-  console.log(prodcut);
-  const { name, price, imageUrl } = prodcut;
+import { FC } from "react";
+import { ProductType } from "../../utils/type";
+
+type ProductProps = {
+  product: ProductType;
+};
+const Product: FC<ProductProps> = ({ product }) => {
+  console.log(product);
+  const { name, price, imageUrl } = product;
   return (
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
-        <img className="p-8 rounded-t-lg" src={imageUrl} alt="product image" />
+        <img className="p-8 rounded-t-lg" src={imageUrl[0]} alt="product image" />
       </a>
       <div className="px-5 pb-5">
         <a href="#">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "./Product";
 import axiosInstance from "../../utils/axiosInstance";
 import { getToken } from "../../utils/sessionHelper";
+import { ProductType } from "../../utils/type";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -23,7 +24,9 @@ const Products = () => {
     <div>
       <h1 className="text-2xl font-bold text-center mb-16">Products</h1>
 
-      {products.map((product: object) => <Product key={product._id} prodcut={product}/>)}
+      {products.map((product: ProductType) => (
+        <Product key={product._id} product={product} />
+      ))}
     </div>
   );
 };
