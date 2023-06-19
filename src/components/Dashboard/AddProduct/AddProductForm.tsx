@@ -9,8 +9,8 @@ import { getToken } from "../../../utils/sessionHelper";
 
 const AddProductForm = () => {
   const [name, setName] = useState("");
-  const [price, setPrice] = useState<number>(0);
-  const [quantityInStock, setquantityInStock] = useState<number>(0);
+  const [price, setPrice] = useState("");
+  const [quantityInStock, setquantityInStock] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [productImage, setProductImage] = useState<File | null>(null);
@@ -28,13 +28,15 @@ const AddProductForm = () => {
       errorToast("Please select an image");
     } else if (isEmpty(name)) {
       errorToast("Please enter product name");
-    } else if (price === 0) {
+    } else if (!price) {
       errorToast("Please enter product price");
+    } else if (!quantityInStock) {
+      errorToast("Please enter quantity in stock");
     } else {
       const formData = new FormData();
       formData.append("name", name);
       formData.append("price", price);
-      formData.append("quantityInStock", quantityInStock);
+      // formData.append("quantityInStock", quantityInStock);
       formData.append("description", description);
       formData.append("category", category);
       formData.append("productImage", productImage);
@@ -58,8 +60,8 @@ const AddProductForm = () => {
   };
   const resetForm = () => {
     setName("");
-    setPrice(0);
-    setquantityInStock(0);
+    setPrice("");
+    setquantityInStock("");
     setDescription("");
     setCategory("");
     setProductImage(null);
@@ -99,8 +101,7 @@ const AddProductForm = () => {
             className="shadow appearance-none border rounded w-full py-3 px-3 text-sm text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="number"
             placeholder="Price"
-            value={price || ""}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </div>
 
@@ -115,7 +116,7 @@ const AddProductForm = () => {
             className="shadow appearance-none border rounded w-full py-3 px-3 text-sm text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="number"
             placeholder="Quantity"
-            onChange={(e) => setquantityInStock(parseInt(e.target.value))}
+            onChange={(e) => setquantityInStock(e.target.value)}
           />
         </div>
 
