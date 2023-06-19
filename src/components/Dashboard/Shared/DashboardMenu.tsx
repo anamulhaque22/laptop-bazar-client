@@ -51,12 +51,10 @@ const DashboardMenu = () => {
                 </svg>
                 <span
                   className="flex-1 ml-3 text-left whitespace-nowrap"
-                  sidebar-toggle-item
                 >
                   Products
                 </span>
                 <svg
-                  sidebar-toggle-item
                   className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -127,12 +125,10 @@ const DashboardMenu = () => {
                 </svg>
                 <span
                   className="flex-1 ml-3 text-left whitespace-nowrap"
-                  sidebar-toggle-item
                 >
                   Orders
                 </span>
                 <svg
-                  sidebar-toggle-item
                   className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 20 20"
